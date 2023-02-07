@@ -1,11 +1,13 @@
-import React from 'react';
 import './About.css';
+import React, { useContext } from 'react';
 import banner from '../../assets/banner.jpeg';
+import { UserContext } from '../../contexts/UserContext';
 
 function About() {
+  const { userName, setUserName } = useContext(UserContext);
   return (
     <div className="about-container">
-      <h1>About Us</h1>
+      <h1>About Us {userName}</h1>
       <img src={banner} alt="banner" />
       <p>
         Rick and Morty is an American adult animated science-fiction sitcom
